@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80" # Mapear el puerto 80 del contenedor al 8080 del host
+    volumes:
+      - .:/usr/share/nginx/html # Montar el proyecto local en el contenedor
+      - ./nginx.conf:/etc/nginx/nginx.conf # Montar configuración de Nginx
